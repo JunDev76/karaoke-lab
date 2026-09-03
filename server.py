@@ -29,6 +29,10 @@ class Handler(SimpleHTTPRequestHandler):
                 path = (ROOT / data.get("path", "")).resolve()
                 if ROOT not in path.parents or not path.is_file(): raise ValueError("invalid path")
                 data["path"] = str(path)
+                result = command(data)
+                lyrics = Path(str(path).removesuffix("_mr.wav") + "_lyrics.json")
+                result["lyrics"] = json.loads(lyrics.read_text()) if lyrics.is_file() else []
+                return self.reply(result)
             self.reply(command(data))
         except (ValueError, json.JSONDecodeError) as e: self.reply({"ok": False, "error": str(e)}, 400)
 

@@ -8,6 +8,8 @@ A small prototype for experimenting with features for a future karaoke app.
 - MR, melody, and vocal volume control
 - Minimal local web player
 
+![Real-time MR player](docs/player.png)
+
 ## Setup
 
 ```sh
