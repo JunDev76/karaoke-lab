@@ -1,0 +1,6 @@
+[submodule "vendor/GAME"]
+	path = vendor/GAME
+	url = https://github.com/openvpi/GAME.git
+[submodule "vendor/rubberband"]
+	path = vendor/rubberband
+	url = https://github.com/breakfastquay/rubberband.git
