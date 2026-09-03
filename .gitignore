@@ -1,0 +1,8 @@
+.DS_Store
+.venv/
+build/
+input/
+models/
+output/
+__pycache__/
+*.py[cod]
