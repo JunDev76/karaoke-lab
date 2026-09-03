@@ -3,7 +3,8 @@
 .game-venv/
 build/
 input/
-models/
 output/
 __pycache__/
 *.py[cod]
+
+models/audio-separator/
