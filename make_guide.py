@@ -13,9 +13,9 @@ def main():
 
     with args.csv.open() as f:
         notes = [
-            (float(r["start_time_s"]), float(r["end_time_s"]), int(r["pitch_midi"]), int(r["velocity"]))
+            (float(r["start_time_s"]), float(r["end_time_s"]), round(float(r["pitch_midi"])), int(r.get("velocity", 80)))
             for r in csv.DictReader(f)
-            if float(r["end_time_s"]) - float(r["start_time_s"]) >= 0.20 and 45 <= int(r["pitch_midi"]) <= 84
+            if float(r["end_time_s"]) - float(r["start_time_s"]) >= 0.20 and 45 <= float(r["pitch_midi"]) <= 84
         ]
 
     # 20ms 단위 skyline으로 화음은 가장 높은 음 하나만 유지한다.
